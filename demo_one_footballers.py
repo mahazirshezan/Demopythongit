@@ -17,10 +17,13 @@ class career_stats(footballers): #career_stats is footballers inheritance
         super().__init__(name, age, position, country, club)
         self.match_played = match_played
         self.goals_scored = goals_scored
+    
+    def avg_goal_per_match(self): #Average Goals
+        return round(self.goals_scored/self.match_played, 2)
 
     def player_records(self):
         super().player_data()
-        print(f"Match Played:{self.match_played}\nGoals Scored:{self.goals_scored}\n")
+        print(f"Match Played:{self.match_played}\nGoals Scored:{self.goals_scored}\nGoals Per Match:{self.avg_goal_per_match()}\n") 
 
 
 
@@ -30,10 +33,9 @@ ronaldo = career_stats("Cristiano Ronaldo", 39, "CF", "Portugal", "Al-Nasser", 1
 
 suarez = career_stats("Luis Suarez", 37, "CF", "Uruguay", "Inter Miami",630,480)
 
+neymar = career_stats("Neymar Jr.", 32, "CF", "Brazil", "Al Hilal SFC", 763, 476 ) #New Player Added
+
 messi.player_records()
 ronaldo.player_records()
 suarez.player_records()
-
-
-
-
+neymar.player_records()
